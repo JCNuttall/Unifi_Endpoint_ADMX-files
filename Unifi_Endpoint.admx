@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="3.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="unifiendpoint" namespace="Ubiquiti.Policies.UniFiEndpoint" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" fallback="en-US" />
+  <supportedOn>
+    <definitions>
+      <definition name="Supported_UniFiEndpoint" displayName="$(string.Supported_UniFiEndpoint)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="Cat_UniFiEndpoint" displayName="$(string.Cat_UniFiEndpoint)" explainText="$(string.Cat_UniFiEndpoint_Help)" />
+  </categories>
+  <policies>
+    <!-- Organization Domain -->
+    <policy name="Pol_OrgDomain" class="Machine" displayName="$(string.Pol_OrgDomain)" explainText="$(string.Pol_OrgDomain_Help)" presentation="$(presentation.Pol_OrgDomain)" key="SOFTWARE\Ubiquiti\unifi endpoint">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <elements>
+        <text id="Txt_OrgDomain" valueName="OrgDomain" required="true" />
+        <boolean id="Chk_EnforceOrgDomain" valueName="EnforceConfigOrgDomain">
+          <trueValue><decimal value="1" /></trueValue>
+          <falseValue><decimal value="0" /></falseValue>
+        </boolean>
+      </elements>
+    </policy>
+
+    <!-- Check for Updates -->
+    <policy name="Pol_CheckUpdate" class="Machine" displayName="$(string.Pol_CheckUpdate)" explainText="$(string.Pol_CheckUpdate_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="CheckUpdate">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Pol_EnforceCheckUpdate" class="Machine" displayName="$(string.Pol_EnforceCheckUpdate)" explainText="$(string.Pol_EnforceCheckUpdate_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="EnforceConfigCheckUpdate">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Launch at Startup -->
+    <policy name="Pol_LaunchAtStartup" class="Machine" displayName="$(string.Pol_LaunchAtStartup)" explainText="$(string.Pol_LaunchAtStartup_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="LaunchAtStartup">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Pol_EnforceLaunchAtStartup" class="Machine" displayName="$(string.Pol_EnforceLaunchAtStartup)" explainText="$(string.Pol_EnforceLaunchAtStartup_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="EnforceConfigLaunchAtStartup">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Connect Wi-Fi on Startup -->
+    <policy name="Pol_ConnectWiFiOnStartup" class="Machine" displayName="$(string.Pol_ConnectWiFiOnStartup)" explainText="$(string.Pol_ConnectWiFiOnStartup_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="ConnectWiFiOnStartup">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Pol_EnforceConnectWiFiOnStartup" class="Machine" displayName="$(string.Pol_EnforceConnectWiFiOnStartup)" explainText="$(string.Pol_EnforceConnectWiFiOnStartup_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="EnforceConfigConnectWiFiOnStartup">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Connect VPN on Startup -->
+    <policy name="Pol_ConnectVpnOnStartup" class="Machine" displayName="$(string.Pol_ConnectVpnOnStartup)" explainText="$(string.Pol_ConnectVpnOnStartup_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="ConnectVpnOnStartup">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Pol_EnforceConnectVpnOnStartup" class="Machine" displayName="$(string.Pol_EnforceConnectVpnOnStartup)" explainText="$(string.Pol_EnforceConnectVpnOnStartup_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="EnforceConfigConnectVpnOnStartup">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+
+    <!-- Auto Reconnect Wi-Fi -->
+    <policy name="Pol_AutoReconnectWiFi" class="Machine" displayName="$(string.Pol_AutoReconnectWiFi)" explainText="$(string.Pol_AutoReconnectWiFi_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="AutoReconnectWiFi">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="Pol_EnforceAutoReconnectWiFi" class="Machine" displayName="$(string.Pol_EnforceAutoReconnectWiFi)" explainText="$(string.Pol_EnforceAutoReconnectWiFi_Help)" key="SOFTWARE\Ubiquiti\unifi endpoint" valueName="EnforceConfigAutoReconnectWiFi">
+      <parentCategory ref="Cat_UniFiEndpoint" />
+      <supportedOn ref="Supported_UniFiEndpoint" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

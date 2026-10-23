@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="3.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>UniFi Endpoint Configuration</displayName>
+  <description>Administrative Templates for Ubiquiti UniFi Endpoint (SOFTWARE\Ubiquiti\unifi endpoint)</description>
+  <resources>
+    <stringTable>
+      <string id="Supported_UniFiEndpoint">UniFi Endpoint Client (Version 3.6.0 or later)</string>
+      <string id="Cat_UniFiEndpoint">UniFi Endpoint</string>
+      <string id="Cat_UniFiEndpoint_Help">Manage configuration settings under HKLM\SOFTWARE\Ubiquiti\unifi endpoint.</string>
+      
+      <!-- Domain Settings -->
+      <string id="Pol_OrgDomain">Configure Organization Domain</string>
+      <string id="Pol_OrgDomain_Help">Pre-fills and optionally locks the Fabric organization domain (e.g. example.ui.com) under HKLM\SOFTWARE\Ubiquiti\unifi endpoint.</string>
+
+      <!-- Update Settings -->
+      <string id="Pol_CheckUpdate">Enable Automatic Update Checks</string>
+      <string id="Pol_CheckUpdate_Help">Allows the UniFi Endpoint client to automatically check for application updates.</string>
+      <string id="Pol_EnforceCheckUpdate">Enforce Automatic Update Checks Setting</string>
+      <string id="Pol_EnforceCheckUpdate_Help">Locks the update check configuration toggle in the client user interface.</string>
+
+      <!-- Startup Settings -->
+      <string id="Pol_LaunchAtStartup">Launch UniFi Endpoint at User Sign-In</string>
+      <string id="Pol_LaunchAtStartup_Help">Automatically starts the UniFi Endpoint application when a user logs into Windows.</string>
+      <string id="Pol_EnforceLaunchAtStartup">Enforce Launch at User Sign-In</string>
+      <string id="Pol_EnforceLaunchAtStartup_Help">Locks the launch-at-startup configuration option in the user settings panel.</string>
+
+      <!-- Wi-Fi Startup Settings -->
+      <string id="Pol_ConnectWiFiOnStartup">Connect Wi-Fi on Startup</string>
+      <string id="Pol_ConnectWiFiOnStartup_Help">Connects to the designated corporate One-Click Wi-Fi network when the application initializes.</string>
+      <string id="Pol_EnforceConnectWiFiOnStartup">Enforce Connect Wi-Fi on Startup</string>
+      <string id="Pol_EnforceConnectWiFiOnStartup_Help">Locks the Wi-Fi auto-connect on startup setting to prevent user override.</string>
+
+      <!-- VPN Startup Settings -->
+      <string id="Pol_ConnectVpnOnStartup">Connect VPN on Startup</string>
+      <string id="Pol_ConnectVpnOnStartup_Help">Triggers the One-Click VPN connection automatically when the application loads.</string>
+      <string id="Pol_EnforceConnectVpnOnStartup">Enforce Connect VPN on Startup</string>
+      <string id="Pol_EnforceConnectVpnOnStartup_Help">Locks the VPN auto-connect behavior so users cannot toggle it off.</string>
+
+      <!-- Auto Reconnect Wi-Fi -->
+      <string id="Pol_AutoReconnectWiFi">Enable Auto-Reconnect for Wi-Fi</string>
+      <string id="Pol_AutoReconnectWiFi_Help">Attempts to reconnect to the assigned corporate One-Click Wi-Fi network if the connection drops.</string>
+      <string id="Pol_EnforceAutoReconnectWiFi">Enforce Auto-Reconnect for Wi-Fi</string>
+      <string id="Pol_EnforceAutoReconnectWiFi_Help">Locks the Wi-Fi auto-reconnect setting against user modification.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="Pol_OrgDomain">
+        <textBox refId="Txt_OrgDomain">
+          <label>Organization Domain (e.g. company.ui.com):</label>
+        </textBox>
+        <checkBox refId="Chk_EnforceOrgDomain" defaultChecked="true">Enforce Organization Domain (lock field in UI)</checkBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
